@@ -1,4 +1,4 @@
-# Memo
+# Memo App by `Kotlin`
 
 - RecyclerView
 - RoomDB
