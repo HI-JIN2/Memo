@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="즐겨찾기" />
+
+    <LinearLayout
+        android:layout_marginLeft="50dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이름"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내용" />
+    </LinearLayout>
+
+    <!--    <Switch-->
+    <!--        android:id="@+id/checkboxUser"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:layout_weight="1"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"/>-->
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_bookmark_border_24"
+        android:layout_gravity="center" />
+    <Button
+        android:id="@+id/btn_Rm"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="delete"/>
+
+
+</LinearLayout>
