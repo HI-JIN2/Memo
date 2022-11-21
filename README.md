@@ -1,0 +1,5 @@
+# Memo
+
+- RecyclerView
+- RoomDB
+- SharedPrefernece
