@@ -19,18 +19,19 @@ class MemoActivity : AppCompatActivity() {
         viewbinding = ActivityMemoBinding.inflate(layoutInflater)
         setContentView(viewbinding.root)
 
-        val editTitle = viewbinding.etTitle
-        val editContent = viewbinding.etContent
-        val roomDb=AppDatabase.getInstance(this)
+//        val editTitle = viewbinding.etTitle
+//        val editContent = viewbinding.etContent
 
         viewbinding.btnSave.setOnClickListener{
             // 메인화면에 리스트로 추가
-            val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("title",editTitle.getText().toString())
-            intent.putExtra("content",editContent.getText().toString())
+            val intent = Intent(this, MainActivity::class.java).apply {
+                putExtra("title",viewbinding.etTitle.text.toString())
+                putExtra("content",viewbinding.etContent.text.toString())
+
+            }
             setResult(RESULT_OK,intent)
             startActivity(intent)
-            finish()
+//            finish()
         }
     }
 }
