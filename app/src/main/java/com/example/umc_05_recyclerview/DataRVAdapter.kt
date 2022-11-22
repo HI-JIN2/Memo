@@ -9,6 +9,8 @@ class DataRVAdapter(private val dataList: ArrayList<Data>):RecyclerView.Adapter<
 
     //private val checkboxStatus = SparseBooleanArray()
 
+
+    val roomDb= AppDatabase.getInstance(this)
     inner class DataViewHolder(private val viewBinding: ItemdataBinding) : RecyclerView.ViewHolder(viewBinding.root) {
         fun bind(data: Data) {
             viewBinding.tvTitle.text = data.title
@@ -23,7 +25,12 @@ class DataRVAdapter(private val dataList: ArrayList<Data>):RecyclerView.Adapter<
 //                    checkboxStatus.put(adapterPosition, true)
 //                notifyItemChanged(adapterPosition)
 //            }
+
+            viewBinding.btnRm.setOnClickListener {
+                //roomDb!!.DataDao().delete(title)
+            }
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataViewHolder {
