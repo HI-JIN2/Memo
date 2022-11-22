@@ -30,7 +30,8 @@ class MemoActivity : AppCompatActivity() {
 
             }
             setResult(RESULT_OK,intent)
-            startActivity(intent)
+            if(!isFinishing) finish()
+            //startActivity(intent)
 //            finish()
         }
     }

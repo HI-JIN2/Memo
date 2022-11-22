@@ -17,7 +17,7 @@ import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private lateinit var viewbinding: ActivityMainBinding
-    //private lateinit var getResultText: ActivityResultLauncher<Intent>
+    private lateinit var getResultText: ActivityResultLauncher<Intent>
 
 //
 //    val sharedPrefs = getSharedPreferences("sharedprefs", Context.MODE_PRIVATE)
@@ -45,9 +45,8 @@ class MainActivity : AppCompatActivity() {
 ////            add(Data("${title}","${content}"))
 //        }
 
-        val getResultText = registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult()
-        ) { result ->
+        getResultText = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
                 val title = result.data?.getStringExtra("title")
                 val content = result.data?.getStringExtra("content")
@@ -72,7 +71,6 @@ class MainActivity : AppCompatActivity() {
 
         //메모작성으로 화면 전환
         val buttonWrite = viewbinding.btnWrite
-
         buttonWrite.setOnClickListener {
             val intent = Intent(this, MemoActivity::class.java)
             //startActivity(intent)
@@ -90,7 +88,6 @@ class MainActivity : AppCompatActivity() {
             val intentb = Intent(this, BookmarkActivity::class.java)
             startActivity(intentb)
             //getResultText.launch(intent)
-
         }
     }
 }
